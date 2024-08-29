@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Module 10</title>
+  </head>
+  <body>
+    <h2>JS Forms</h2>
+    <form action="https://google.com" onsubmit="validFunction()">
+      <input type="text" />
+      <input type="submit" />
+    </form>
+
+    <script>
+      function validFunction() {
+        // alert("This form will not be submitted");
+        return false;
+      }
+    </script>
+
+    <h2>Client Side Validation</h2>
+    <form action="https://google.com">
+      <label for="">User Name:</label>
+      <input type="text" id="username" />
+      <button onclick="csValidFunction ()" type="submit">Submit</button>
+      <p>This demo will require internet connection</p>
+    </form>
+
+    <script>
+      function csValidFunction() {
+        var username = document.getElementById("username").value;
+        if (username === "") {
+          alert("Please enter a value!");
+          return false;
+        }
+      }
+    </script>
+
+    <h2>JS Form Input</h2>
+    <h2>Get an Input's value</h2>
+    <form action="">
+      <label for="input-val">User Name:</label>
+      <input type="text" id="input-val" name="my_name" />
+      <button onclick="getInputValue()">Get Value</button>
+    </form>
+
+    <script>
+      function getInputValue() {
+        var value = document.getElementById("input-val").value;
+        alert("The input value is :" + value);
+      }
+    </script>
+
+    <h2>Limit Number of Characters</h2>
+    <h2>Try to input a text with more than 10 Characters</h2>
+
+    <form
+      action="https://codeliber.com/form-action.php"
+      onsubmit="validLimitForm()"
+    >
+      <label for="label-input">Enter Name:</label>
+      <input type="text" id="label-input" name="person" />
+      <input type="submit" />
+    </form>
+
+    <script>
+      function validLimitForm() {
+        var value = document.getElementsByName("person")[0].value;
+        var length = value.length;
+        if (length > 10) {
+          alert("You cannot input more than 10 characters");
+          return false;
+        }
+      }
+    </script>
+
+    <form
+      action="https://codeliber.com/form-action.php"
+      onsubmit="validNumberFunc()"
+    >
+      <label for="">
+        User Name:
+        <input type="text" name="test_age" />
+        <input type="submit" />
+      </label>
+      <p>Age is less than 18</p>
+    </form>
+
+    <script>
+      function validNumberFunc() {
+        var age = document.getElementsByName("test_age")[0].value;
+        if (age > 18) {
+          alert("User age is less than 18");
+          return false;
+        } 
+      }
+    </script>
+  </body>
+</html>

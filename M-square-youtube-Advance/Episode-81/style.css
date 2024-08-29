@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+    color: aqua;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.parent{
+   width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.toastAlert{
+    background-color: red;
+    padding: 10px;
+    border-radius: 10px;
+    transition: bottom 0.5s ease-in-out;
+    position: relative;
+}

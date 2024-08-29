@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Module 7</title>
+  </head>
+  <body>
+    <h1>JS Module 7</h1>
+    <h2>javascript Timeout and Interval</h2>
+    <h2>Timeout</h2>
+
+    <p>SetTimeout</p>
+    <h2>Print Hello World after 3 sec</h2>
+    <p id="mesg">Click This Button to cancel the timeout before 3s</p>
+    <button onclick="cancelTimeout()">Cancel Time Out</button>
+    <!-- setTimeOut(function(){},delay) -->
+    <script>
+      var myTimeout = setTimeout(function () {
+        // prompt("Hello world");
+      }, 3000);
+
+      function cancelTimeout() {
+        clearTimeout(myTimeout);
+        document.getElementById("mesg").innerText =
+          "myTimeout has been cancel and will not be shown";
+      }
+    </script>
+
+    <h2>setInterval</h2>
+    <p>Set Interval Method</p>
+    <p id="intervalDemo">10</p>
+    <button onclick="clearMyInterval()">ClearInterval</button>
+    <script type="text/javascript">
+      var x = 10;
+      var mySetInterval = setInterval(function () {
+        x += 10;
+        // document.getElementById("intervalDemo").innerText = x;
+      }, 1000);
+    </script>
+    <h2>Stopping an Interval</h2>
+    <p>ClearInterval()</p>
+
+    <script type="text/javascript">
+      function clearMyInterval() {
+        clearInterval(mySetInterval);
+      }
+    </script>
+
+    <h2>Search ()</h2>
+    <script type="text/javascript">
+      var text = "I love programming";
+      var result = text.search(/Programming/i);
+      document.write(result);
+
+      document.write("<h2>Replace () Method</h2>");
+      var word =
+        "I love Javascript Programming and Javascript is very important";
+      document.write(word);
+      var replace = word.replace("Javascript", "PHP");
+      var result1 = word.replace(/Javascript/g, "PHP");
+      document.write(result1);
+      document.write(replace);
+    </script>
+
+    <h2>JS Exception Handling</h2>
+    <h2>Catching an Exception</h2>
+    <h2>The try .. catch Statement</h2>
+    <p>
+      In This example,the following Exception I thrown because myErrorFunction
+      is not defined
+    </p>
+
+    <p id="p-demo"></p>
+
+    <script type="text/javascript">
+      try {
+        myErrorFunction();
+      } catch (err) {
+        document.getElementById(p - demo).innerText = err;
+      }
+    </script>
+
+
+        <h2>Try Catch  example</h2>
+        <p>Try to enter a number that's <b>Less than 18</b></p>
+        <form action="">
+          <label for="input-age">Age:</label>
+          <input type="number" id="input-age">
+          <button type="button"  id="submitBtn">Submit</button>
+        </form>
+
+       <p id="par-demo"></p>
+       <script type="text/javascript">
+        var submitBtn = document.getElementById("submitBtn");
+        submitBtn.onclick = function(){
+          var inputAge = parseInt(document.getElementById("input-age").value);
+
+          try{
+            if(inputAge<18){
+              throw "User age is must be 18 or Older";
+            }else{
+              document.getElementById("par-demo").innerText = "User is Valid";
+            }
+          }catch(err){
+            document.getElementById("par-demo").innerText = err;
+          }
+        }
+       </script>
+</html>

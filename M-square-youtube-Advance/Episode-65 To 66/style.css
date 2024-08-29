@@ -1,0 +1,39 @@
+ *{
+    /* background-color: gray; */
+ }
+.container {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    margin-top:40px;
+}
+
+.form-control {
+    max-width :500px;
+}
+
+.shopListContainer{
+    margin-top :20px;
+}
+
+.product-Name{
+    display :inline;
+    cursor: pointer;
+    background-color :yellow;
+    padding :10px;
+    border-radius: 5px;
+    user-select :none;
+}
+
+.purchased {
+    text-decoration : line-through;
+}
+
+.fa-trash{
+    margin-left :10px;
+    cursor:pointer;
+}
+
+.product-container{
+    margin-bottom: 40px;
+}

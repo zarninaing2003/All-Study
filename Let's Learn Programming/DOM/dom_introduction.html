@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<body lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Introduction</title>
+  </head>
+  <body>
+    <h2>JS DOM Introduction</h2>
+    <h2>Select The Topmost Elements</h2>
+    <script>
+      // get the value of the lang attribute
+      //   alert(document.documentElement.getAttribute("lang"));
+
+      //   changes the background color of the body
+      //   document.body.style.backgroundColor = "green";
+    </script>
+
+    <h2>Select an Element By ID</h2>
+    <p id="p-demo">Sample Text</p>
+    <script>
+      document.getElementById("p-demo").innerText = "Hello World";
+    </script>
+
+    <h2>Select Element by Class Name</h2>
+    <p class="p-demo">My class Name is <b>"p-demo"</b>.Welcome!</p>
+    <p>I have no class Name</p>
+    <p class="p-demo">My class Name is <b>"p-demo"</b>.Coder!</p>
+    <p>I have no class name</p>
+  </body>
+
+  <script>
+    var element = document.getElementsByClassName("p-demo");
+
+    for (let i = 0; i < element.length; i++) {
+      element[i].style.fontSize = "20px";
+      element[i].style.color = "green";
+    }
+  </script>
+
+  <h2>Select Elements by Tag Name</h2>
+  <h3>Hello World</h3>
+  <p>Welcome to My World</p>
+  <h3>Coding is Fun</h3>
+  <p>I love coding</p>
+  <script>
+    var tagName = document.getElementsByTagName("p");
+    for (let i = 0; i < tagName.length; i++) {
+      tagName[i].style.color = "red";
+    }
+  </script>
+
+  <h2>Select By name</h2>
+
+  <label for=""
+    >First Name:
+    <input type="text" name="first_name" />
+  </label>
+  <br />
+  <br />
+  <label for=""
+    >Last Name:
+    <input type="text" name="last_name" />
+  </label>
+  <button type="submit" onclick="getValues()">Submit</button>
+  <script>
+    function getValues() {
+      var firstName = document.getElementsByName("first_name")[0].value;
+      var lastName = document.getElementsByName("last_name")[0].value;
+      var fullName = firstName + lastName;
+      alert("My full Name is :" + fullName);
+    }
+  </script>
+
+  <h2>Select Elements Using Css selectors</h2>
+  <p id="demo">Hello World</p>
+  <script>
+    document.querySelectorAll("#demo")[0].innerText = "zar ni phone";
+  </script>
+
+    <h4 class="par-class">Hello World</h4>
+    <p class="p-class"> I love Hsu Myat Hlaing</p>
+    <h4 class="par-class">I love Programming</h4>
+    <p class="p-class">JS DOM</p>
+    
+    <script>
+        var h4Element = document.querySelectorAll(".p-class");
+        for(let i = 0; i<h4Element.length;i++){
+            h4Element[i].style.color = "orange";
+        }
+    </script>
+</body>
+</html>

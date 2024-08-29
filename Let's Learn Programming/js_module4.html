@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Module -4</title>
+  </head>
+  <body>
+    <h1>Js Module -4</h1>
+    <h2>JS Array</h2>
+    <script type="text/javascript">
+      function makingHeading(title) {
+        document.write("<h2>" + title + "</h2>");
+      }
+
+      function lineBreak() {
+        document.write("<br>");
+      }
+
+      makingHeading("Access an Array Item");
+
+      var person = ["Hsu Hsu", "Mya Mya", "Su Su"];
+      document.write(person[0]);
+      lineBreak();
+      document.write(person[1]);
+      lineBreak();
+      document.write(person[2]);
+      lineBreak();
+
+      makingHeading("Added Item to an Array");
+      person.push("zar ni");
+      document.write("Zar ni is Added By:" + person + "Array");
+      lineBreak();
+      makingHeading("Remove Item to an Array");
+      person.pop();
+      document.write(person);
+      lineBreak();
+      makingHeading("Added Item to First Array");
+      person.unshift("zar ni phone");
+      document.write(person);
+      lineBreak();
+      makingHeading("Remove Item to Last Array");
+      person.shift();
+      document.write(person);
+      lineBreak();
+      makingHeading("Access the Last Item");
+      document.write(
+        person[person.length - 1] + " is the last item of the person Array"
+      );
+      makingHeading("Looping Over an Array");
+      for (let i = 0; i < person.length; i++) {
+        document.write(person[i] + "are the person array" + "<br>");
+      }
+      lineBreak();
+
+      makingHeading("Type Of Person Array");
+      let type = typeof person;
+      document.write("Type of Person Array is :" + type);
+    </script>
+    <h2>JS Array Methods</h2>
+    <script type="text/javascript">
+      makingHeading("ForEach() Method");
+      var cities = ["Yangon", "Mandalay", "Sagaing", "Magway"];
+      cities.forEach(function (val, i, arr) {
+        document.write(i + ":" + val + "<br>");
+        // val is the value of the element
+        // i is the index of the element
+        //  arr is the array itself( cities);
+      });
+
+      makingHeading("Arrays to String with join() Method");
+      var str = cities.join();
+      document.write(str);
+      makingHeading("String to Array with split() Method");
+      var arrString = "Hello World My girlFriend";
+      var newArray = arrString.split("");
+      document.write(newArray);
+
+      makingHeading("Merging Arrays");
+      var fruit1 = ["Apple", "Banana", "Orange"];
+      var fruit2 = ["Lemon", "Lime", "Strawberry"];
+      var newMerge = fruit1.concat(fruit2);
+      document.write(newMerge);
+      lineBreak();
+      var indexApple = fruit1.indexOf("Apple");
+      document.write(indexApple);
+
+      makingHeading("Slice an Array");
+
+      var citiy = [
+        "Yangon",
+        "Mandalay",
+        "Sagaing",
+        "Magway",
+        "Minhla",
+        "Sitkwin",
+      ];
+      var sliceArray = citiy.slice(1, 3);
+      document.write(sliceArray);
+
+      makingHeading("sort() Method");
+      var fruit = ["orange", "apple", "banana", "strawberry", "mango", "lime"];
+      var sortResult = fruit.sort();
+      document.write(sortResult + " After Sorting Result");
+      lineBreak();
+
+      makingHeading("Sorting Number");
+      var num = [3, 5, 6, 19, 56, 30, 3];
+      num.sort(function (a, b) {
+        return a - b;
+      });
+      document.write(num + "is Ascending Order");
+      lineBreak();
+      num.sort(function (a, b) {
+        return b - a;
+      });
+      document.write(num + " is Descending Order");
+
+      makingHeading("Map() Method ");
+      var number = [10, 20, 30, 40, 50];
+      var numberTwo = number.map(function (val) {
+        return val * 2;
+      });
+
+      document.write(numberTwo + " is the twice of number");
+      lineBreak();
+
+      makingHeading("filter() Method");
+      var filterArray = number.filter(function (val) {
+        return val < 40;
+      });
+      document.write(filterArray);
+    </script>
+  </body>
+</html>

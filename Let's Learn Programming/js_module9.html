@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Module 9</title>
+  </head>
+  <body>
+    <h2>Js Module 9</h2>
+    <h2>Js this Keyword</h2>
+    <p id="p-demo"></p>
+
+    <script type="text/javascript">
+      var fruit = {
+        name: "apple",
+        color: "red",
+        isSweet: true,
+        showFruit: function () {
+          document.getElementById("p-demo").innerText =
+            "This fruit is " + this.name + " This color is " + this.color;
+        },
+      };
+      fruit.showFruit();
+    </script>
+
+    <h2>The Global Object</h2>
+    <!-- window object represent the global object -->
+    <script>
+      window.document.write("Hello World");
+      //   window.alert("HeHee");
+
+      function greetUser() {
+        // alert("Hello World");
+      }
+
+      window.greetUser();
+    </script>
+
+    <h2>This in a EventHandler</h2>
+    <button id="btn">Click To HIde Me</button>
+    <script>
+      var btn = document.getElementById("btn");
+      btn.onclick = function () {
+        this.style.display = "none";
+      };
+    </script>
+
+    <h2>JS Arrow Function</h2>
+    <!-- 
+        function myFunc(){
+            alert("Hello World");
+        }
+
+        myFunc = ()=>{
+            alert("Hello world");
+        }
+
+        myFunc = ()=>alert("Hello World");
+     -->
+    <button onclick="myFunc()">Click To call Arrow Function</button>
+    <script type="text/javascript">
+      // myFunc = ()=> alert("This is alert Arrow Function")
+    </script>
+
+    <h2>Parameters In Arrow Function</h2>
+    <button onclick="myFunc2(5,3)">Click Me</button>
+    <script>
+      myFunc2 = (x, y) => alert(x + y);
+    </script>
+
+    <h2>This in Arrow Function</h2>
+    <button id="hide-btn">Click To Hide Me</button>
+    <script>
+      var btnHide = document.getElementById("hide-btn");
+      btnHide.onclick = function () {
+        hide = () => {
+          this.style.display = "none";
+        };
+        hide();
+      };
+    </script>
+
+    <h2>JS Json To Object</h2>
+    <!-- Javascript object notation -->
+    <p id="json-par"></p>
+
+    <script>
+      var text = `{
+            "firstName" : "John",
+            "lastName" : "Doe",
+            "age" : 30,
+            "isMarried" : true
+        }`;
+
+      var obj = JSON.parse(text);
+      // convert json to obj
+      document.getElementById("json-par").innerText =
+        obj.firstName + "" + obj.lastName + "" + obj.age + "year old";
+    </script>
+
+    <h2>Obj to Json</h2>
+    <p id="obj-json"></p>
+    <script>
+      var obj = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 20,
+        isMarried: true,
+      };
+
+      var text = JSON.stringify(obj);
+      // convert obj to json
+      document.getElementById("obj-json").innerText = text;
+    </script>
+  </body>
+</html>

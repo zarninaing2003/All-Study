@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .result-box{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 5px;
+    }
+
+    #result{
+        display: inline-block;
+        width: 300px;
+    }
+</style>
+<body>
+    <main id="app">
+        <h1>Area Calculator</h1>
+        <div class="result-box">
+            <p>Result:  <span id="result"></span></p>
+            <button onclick="storeResult()">Store</button>
+            <button onclick="clearResult()">Clear</button>
+        </div>
+
+        <div class="">
+            <input id="widthInput" type="number" placeholder="Width">
+            <input id="heightInput" type="number" placeholder="Height">
+            <button id="calcBtn" onclick="handleBtn()">Calculate</button>
+        </div>
+
+        <ul id="records">
+           
+        </ul>
+    </main>
+</body>
+<script src="./area-calc.js"></script>
+</html>

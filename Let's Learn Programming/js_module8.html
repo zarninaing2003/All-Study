@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Module 8</title>
+  </head>
+  <body>
+    <h2>JS Module 8</h2>
+    <h2>JS Date</h2>
+    <p>The Date object allows us to work with dates</p>
+    <h2>The Date() Constructor</h2>
+    <ul>
+      <li>new Date</li>
+      <li>new Date(millisecond)</li>
+      <li>new Date(dateString)</li>
+      <li>new Date(year,monthIndex,day,hours,minutes,seconds,millisecond )</li>
+    </ul>
+
+    <h2>new Date</h2>
+    <script type="text/javascript">
+      function Break() {
+        document.write("<br>");
+      }
+      const date = new Date();
+      document.write(date + "  This is today date");
+      Break();
+
+      const date1 = new Date(329284890220);
+      document.write(date1 + " is the Millisecond");
+      Break();
+
+      const date2 = new Date("June 24,2003");
+      document.write(date2 + " is MY Birthday");
+      Break();
+
+      const date3 = new Date(2000, 5, 6, 23, 0);
+      document.write(
+        date3 +
+          " is date with new Date (yea,monthIndex,day,minutes,seconds,millisecond)"
+      );
+    </script>
+
+    <h2>JS Date Formats</h2>
+    <ul>
+      <li>Short Date: "06/24/2003"</li>
+      <li>Long Date : "June 24 2003"</li>
+      <li>ISO Date : "2003-6-24"</li>
+    </ul>
+    <h2>Short Date</h2>
+    <script>
+      var date4 = new Date("06/24/2003");
+      document.write(date4 + " is short date");
+      Break();
+      var date5 = new Date("June 24 2003");
+      document.write(date5 + " is Long date");
+      Break();
+
+      var date6 = new Date("2003-6-24");
+      document.write(date6 + " is ISO Date");
+    </script>
+
+    <h2>Js Date Get Method</h2>
+    
+    <ul>
+      <li>Date.now()</li>
+      <li>Date.getFullYear()</li>
+      <li>Date.getMonth()li></li>
+      <li>Date.getDate()</li>
+      <li>Date.getDay()</li>
+      <li>Date.getHours()</li>
+      <li>Date.getMinutes()</li>
+      <li>Date.getSeconds()</li>
+      <li>Date.getMillisecond()</li>
+      <li>Date.getTime(givenDate)</li>
+    </ul>
+
+    <script type="text/javascript">
+      function makeHeading(title) {
+        document.write("<h2>" + title + "</h2>");
+      }
+
+      makeHeading("Date.now");
+      var now = Date.now();
+      document.write(now);
+
+      Break();
+
+      makeHeading("Date.getMonths");
+      var month = date.getMonth();
+      document.write(month);
+
+      makeHeading("Date.getDate");
+      var getCurrentDate = date.getDate();
+      document.write(getCurrentDate);
+
+      makeHeading("Date.getDay");
+      var day = date.getDay();
+      document.write(day);
+
+      makeHeading("Date.getHours");
+      var hours = date.getHours();
+      document.write(hours);
+
+      makeHeading("Date.getminutes");
+      var min = date.getMinutes();
+      document.write(min);
+
+      makeHeading("Date.getseconds");
+      var second = date.getSeconds();
+      document.write(second);
+
+      makeHeading("Date. millisecond");
+      var millisecond = date.getMilliseconds();
+      document.write(millisecond);
+
+      makeHeading("Date.getTime(givenDate)");
+      var newDate = new Date("June 24 2003");
+      var newDateMilliseconds = newDate.getTime(newDate);
+      document.write(newDateMilliseconds);
+    </script>
+  </body>
+</html>

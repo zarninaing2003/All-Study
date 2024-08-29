@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Module 3</title>
+</head>
+<body>
+    <h2>Function</h2>
+    <p id="p-demo">
+        Sum of Num result is:
+    </p>
+    <button onclick="numFunction(10,20)">
+        Click To Sum
+    </button>
+    <br>
+    <br>
+    <script type="text/javascript">
+
+        function lineBreak(){
+            document.write("<br>");
+        }
+
+        function writeText(str){
+            document.write(str);
+        }
+
+        // Calling the funciton
+        writeText("This is Function writeText");
+        lineBreak();
+        writeText("Hello World");
+        lineBreak();
+        function numFunction(num1,num2){
+            let sum = num1 + num2;
+            // document.write("Sum OF Number is :",sum);
+            document.getElementById("p-demo").innerText = sum;
+        }
+        // numFunction(10,20);
+        lineBreak();
+
+    </script>
+
+    <h2>Return Function</h2>
+    <script type="text/javascript">
+        function sumInteger(num1 , num2){
+            let sum  = num1 + num2;
+            return sum;
+        }
+    var returnSumNumber = sumInteger(2,3);
+    document.write(returnSumNumber + " is Return Value");
+    lineBreak();
+    
+    document.write("<h2> Function Scope</h2>");
+    // Global Variable
+        var firstName = "Hus myat";
+
+        function getAge(age){
+            // local Variable
+            let fullName = "zar ni naing";
+          let result =   document.write(fullName + "is" + age + "Years Old");
+          document.write(result);
+        }
+
+        function getName(name){
+            getAge(21);
+            let myNameFull = "zar ni phone naing";
+            document.write("My Name is:" + myNameFull);
+        }
+
+        getName();
+        lineBreak();
+
+
+        document.write(firstName);
+    </script>
+
+    <script type="text/javascript">
+        function brLine(){
+            document.write("<br>");
+        }
+
+        var person = {
+            name:"zar ni",
+            age:21,
+            hobbies: ["coding","football"],
+            isMale: true,
+            showName(){
+                alert(this.name);
+            },
+            showAge:function(){
+               alert(this.age) 
+            }
+        }
+
+        // Accessing Object's Property
+        document.write(person.name);
+        brLine();
+        document.write(person.age);
+        brLine();
+        document.write(person.hobbies[0]);
+        brLine();
+        document.write(person.isMale);
+        brLine();
+        // person.showName("zar ni");
+
+        var strn = "zar ni phone naing";
+        var strLength = strn.length;
+        document.write("String Length is:" + strLength);
+        lineBreak();
+        var x = "zar ni";
+        document.write(x[4]);
+        lineBreak();
+        var text = "How are you?";
+        var textIndex = text.indexOf("are");
+        document.write("Index Of are is:" + textIndex);
+        var upperCase = text.toUpperCase();
+        lineBreak();
+        document.write(upperCase)
+        lineBreak();
+        var lowerCase = text.toLowerCase();
+        document.write(lowerCase);
+        lineBreak();
+        document.write(Number.isInteger(21));
+        lineBreak();
+        document.write(Number.isInteger(22.3));
+
+        document.write("<h2>ParseInt</h2>")
+        var num1= 22.4;
+        var num2 = 22;
+        var num3  = "32 day";
+        document.write(parseInt(num1));
+        lineBreak();
+        document.write("<h2>ParseFloat</h2>")
+        document.write(parseFloat(num2));
+        lineBreak();
+        document.write(parseInt(num3));
+
+    </script>
+
+</body>
+</html>

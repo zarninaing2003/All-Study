@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS DOM Node</title>
+  </head>
+  <body>
+    <h2>Js Dom Navigation</h2>
+    <h2>Parent and Children</h2>
+
+    <div id="container1">
+      <h1>Hello world</h1>
+      <p id="p-demo">This is Paragraph</p>
+      <a href="https://example@gmial.com">Go To Example </a>
+    </div>
+
+    <script>
+      var pElement = document.getElementById("p-demo");
+      pElement.parentElement.style.backgroundColor = "orange";
+
+      document.write("<h2>First Element Child</h2>");
+      var div = document.getElementById("container1");
+      div.firstElementChild.style.backgroundColor = "red";
+
+      document.write("<h2>Last Element Child</h2>");
+      div.lastElementChild.style.backgroundColor = "green";
+
+      div.children[1].style.color = "blue";
+      div.children[0].style.fontsize = "24px";
+    </script>
+
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+
+    <div id="container2">
+      <h1>Hello world</h1>
+      <p id="p-demo2">This is Paragraph</p>
+      <a href="https://example@gmial.com">Go To Example </a>
+    </div>
+
+    <script>
+      var container2 = document.getElementById("container2");
+      container2.parentElement.style.color = "blue";
+      var par = document.getElementById("p-demo2");
+      par.previousElementSibling.style.color = "green";
+      par.nextElementSibling.style.color = "orange";
+    </script>
+
+    <h2>JS DOM HTML</h2>
+    <h2>Getting Element's Content</h2>
+    <ul id="list">
+      <li>Mango</li>
+      <li>Banana</li>
+      <li>Oranges</li>
+    </ul>
+    <button onclick="showFruit()">Show Fruit</button>
+    <script>
+      var list = document.getElementById("list");
+      function showFruit() {
+        alert("I really like fruit are: " + list.innerText);
+      }
+    </script>
+
+    <h2>Replacing Element's Content</h2>
+    <button onclick="replaceFruit()">Replace List Content</button>
+    <script>
+      function replaceFruit() {
+        var list1 = document.getElementById("list");
+        list1.innerHTML =
+          "<li>Strawberry</li>" + "<li>Lime</li>" + "<li>Apple</li>";
+      }
+    </script>
+
+    <h2>Creating Elements (Node)</h2>
+    <div id="container3"></div>
+
+    <script>
+      var element = document.createElement("p");
+      var textNode = document.createTextNode("Zar ni phone");
+
+      element.appendChild(textNode);
+      document.getElementById("container3").appendChild(element);
+    </script>
+
+    <ul id="container4">
+      <li>Yangon</li>
+      <li>Saging</li>
+      <li>Mandalay</li>
+    </ul>
+
+    <button onclick="prependCity()">Add Prepend City</button>
+    <button onclick="appendCity()">Add append City</button>
+    <button onclick="removeFirst()">Remove First Child</button>
+    <button onclick="removeLast()">Remove last Child</button>
+
+    <script>
+      function prependCity() {
+        var li = document.createElement("li");
+        var text = document.createTextNode("Sitkwin");
+        li.appendChild(text);
+
+        container4.prepend(li);
+      }
+
+      function appendCity() {
+        var li = document.createElement("li");
+        var text = document.createTextNode("Minhla");
+        li.appendChild(text);
+        container4.appendChild(li);
+      }
+
+      function removeFirst() {
+        var removeFirst = container4.firstElementChild;
+        removeFirst.remove();
+      }
+
+      function removeLast() {
+        var removeLast = container4.lastElementChild;
+        removeLast.remove();
+      }
+    </script>
+
+    <h2>Get attribute</h2>
+    <a href="https://google.com" id="google">Google.com</a>
+    <button onclick="getAttributes()">Get attribute button</button>
+    <button onclick="setAttributes()">Set attribute button</button>
+
+    <script>
+      var aTag = document.getElementById("google");
+      var getAttValue = aTag.getAttribute("href");
+      function getAttributes() {
+        alert(getAttValue);
+      }
+
+      function setAttributes() {
+        aTag.setAttribute("href", "https://example.com");
+        alert(aTag.getAttribute("href"));
+      }
+    </script>
+  </body>
+</html>

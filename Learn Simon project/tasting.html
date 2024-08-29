@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing HTML to javascript</title>
+   <style type="text/css">
+
+    .btn1{
+        background-color: yellow;
+    }
+    .btn2{
+        background-color: blanchedalmond;
+    }
+    .btn3{
+        background: lightgreen;
+    }
+    table,th,td{
+        border: 1px solid black;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        
+    }
+
+th,td{
+    padding:5px;
+}
+
+thead,th,tbody,td{
+    text-align: center;
+}
+tr:nth-child(even){
+    background: greenyellow;
+}
+tr:nth-child(odd){
+    background:lightcoral;
+}
+    
+    
+
+    table{
+      border-collapse:collapse;
+      width: 100%;
+      padding: 5px;
+    }
+    #eff-btn{
+        transition: 2s;
+    }
+    #eff-btn:hover{
+        background-color: lightcoral;
+        color: blueviolet;
+        border: 5px solid blanchedalmond;
+        box-shadow: 1px 1px 2px 3px goldenrod;
+        cursor: pointer;
+    }
+
+    .with-transition{
+        width: 100px;
+        height: 100px;
+        background-color:black;
+        transition-property: width,height;
+        transition: 2s;
+        transition-duration: 3s;
+        cursor: pointer;
+      }
+      .with-transition:hover{
+        width: 200px;
+        height: 200px;
+        background-color: brown;
+      }
+    
+   </style>
+</head>
+<body>
+
+    <h2>Transition Testing</h2>
+    <div class="with-transition"></div>
+
+    <h2>Effect Button</h2>
+
+    <button id="eff-btn">Effect Button</button>
+
+    <h2>Button Testing</h2>
+
+    <button class="btn1">Sign In</button>
+    <button class="btn2">Sign In</button>
+    <button class="btn3">Sign In</button>
+
+
+
+    <h2> Table Testing </h2>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+            </tr>
+        </thead><br><br>
+        
+        <tbody>
+            <tr>
+                <td>Zarni</td>
+                <td>Naing</td>
+                <td>Male</td>
+            </tr>
+
+            <tr>
+                <td>Hsu Myat</td>
+                <td>Hlaing</td>
+                <td>Female</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Testing Html to javascript</h2>
+    <input type="text" id="text-demo">
+    <button onclick="test();">Get Value</button><br><br>
+
+    <input type="checkbox"  id="test-demo1">
+    <br><br>
+    <button onclick="text();">submit</button>
+
+    <h2>Color testing</h2>
+    <input type="color" id="color-demo">
+    <button onclick="color();">Reset</button>
+
+    <h2>Email Tesiting</h2>
+    <input type="email" id="email-demo">
+    <button onclick="email1();">Submit</button>
+
+        <h2>Date Testing</h2>
+    <input type="date" id="date-demo">
+    <br><br>
+    <button onclick="date();">Date</button>
+    <br><br>
+
+    <h2>Hiddening File</h2>
+    <input type="hidden" value="I am Hidden file" id="hidden-demo">
+    <br><br>
+    <button onclick="hiddenTest();">Get Value</button>
+    <br><br>
+
+    <h2>Password Testing</h2>
+    <input type="password" id="password-demo">
+    <button onclick="getValue();">Reset</button><br><br>
+
+    <h2>Password Testing</h2>
+    <input type="password" id="password-demo">
+    <button onclick="getValue();">Reset</button><br><br>
+
+    <h2>Gender Testing</h2>
+    <input type="radio" name="gender" value="male" id="male">
+    <label for="male">Male</label>
+
+    <input type="radio" name="gender" value="female" id="female-demo">
+    <label for="female">Female</label>
+    <br><br>
+    <button onclick="getValueGender();">Submit</button>
+
+    <h2>Fruit List</h2>
+    <select name="" id="select-demo">
+        <option value="Apple">Apple</option>
+        <option value="orange">Orange</option>
+        <option value="mango">Mango</option>
+    </select>
+    <button onclick="fruits();">Choice</button>
+
+
+    <h2>Multiple Testing</h2>
+    <select multiple id="demo-select">
+    <option value="mango">Mango</option>
+    <option value="orange">Orange</option>
+    <option value="banana">Banana</option>
+    </select><br><br>
+    <button onclick="clickGetValue();">choice</button>
+
+    <h2>Auto Reset and Submit Button</h2>
+    
+    <form for="text" action="option.html">
+        Name:
+        <input type="text">
+    </label>
+
+    <label for="text">
+        Address:
+        <input type="text">
+    <br><br>
+    <button type="reset">Reset</button>
+    <button typr="submit">Submit</button>
+    </form>
+
+
+
+    
+    <script type="text/javascript">
+
+        function fruits(){
+            alert(document.getElementById("select-demo").value);
+        }
+
+        function getValueGender(){
+            // radio = radio elements 
+            var radios= document.getElementById("gender");
+
+            //number of radios = 2
+            var numder_of_radios = radios.length;
+
+            for(let i=0; i<numder_of_radios; i++){
+                if(radios[i].checked){
+                    alert(radios[i].value);
+                }
+            }
+        }
+        function getValue(){
+            alert(document.getElementById("password-demo").vlaue);
+        }
+
+        function hiddenTest(){
+            alert(document.getElementById("hidden-demo").value);
+        }
+
+        function test(){
+            alert(document.getElementById("text-demo").value);
+        }
+
+        function text(){
+            alert(document.getElementById("test-demo1").checked);
+        }
+
+        function color(){
+            alert(document.getElementById("color-demo").value)
+        }
+
+        function date(){
+            alert(document.getElementById("date-demo").vlaue);
+        }
+
+        function email1(){
+            alert(document.getElementById("email-demo").value);
+        }
+
+        
+        function clickGetValue(){
+            //3 options
+            let _options = document.getElementById("demo-select").options
+            
+            let _options_count = options.length;
+
+            let vlaue = [];
+
+           for(let i=0; i<_options_count;i++){
+            if(_options[i].selected){
+                value.push(_options[i].value);
+            }
+           }
+           alert(JSON.stringify(value));
+        }
+        
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Module-5</title>
+  </head>
+  <body>
+    <h1>Js MOdule 5</h1>
+    <h2>JS Events</h2>
+    <button id="btn">Click Me</button>
+    <script type="text/javascript">
+      var btn = document.getElementById("btn");
+      btn.onclick = function () {
+        // alert("This is Alert Box");
+      };
+
+      function lineBreak() {
+        document.write("<br>");
+      }
+    </script>
+
+    <h2>Inline Event Handlers</h2>
+    <!-- <button onclick='alert("This is Inline dialog Box")'> -->
+      Inline Events Dialog Box
+    </button>
+    <button onclick="myFun()">Function Box</button>
+    <script type="text/javascript">
+      function myFun() {
+        // alert(" This is Function alert Box");
+      }
+    </script>
+
+    <h2>Add EventListener</h2>
+    <!-- element.addEventListener(EventType,listenerFunction) -->
+    <button id="btn2">Click Me</button>
+    <script type="text/javascript">
+      var btn2 = document.getElementById("btn2");
+      btn2.addEventListener("click", function () {
+        // alert("This is EventListener Function");
+      });
+    </script>
+
+    <h2>More Event Type</h2>
+    <h2>Change Event Type</h2>
+    <label for="">Choose The your native town
+        <select name="" id="city">
+            <option value="Yangon">Yangon</option>
+            <option value="Mandalay">Mandalay</option>
+            <option value="Sitkwin">Sitkwin</option>
+            <option value="Minhla">Minhla</option>
+        </select>
+    </label>
+    <p>Your Selected is: <span id="span-demo"></span></p>
+    
+    <script type="text/javascript">
+       var select = document.getElementById("city");
+       select.addEventListener("change",function(){
+        var changeValue =  select.value;
+        document.getElementById("span-demo").innerText = changeValue;
+       })
+    </script>
+
+    <h2>Mouse Over Event</h2>
+    <p id="p-demo">When you mouseover me, my value will change</p>
+    <script type="text/javascript">
+        var par = document.getElementById("p-demo");
+           par.addEventListener("mouseover",function(){
+                par.innerText = "Hello World";
+        })
+    </script>
+
+    <h2>Keypress Event</h2>
+    <textarea name="" id="area" cols="30" rows="10"></textarea>
+    <p>The value is : <span id="p-span"></span></p>
+    <script type="text/javascript">
+        var textarea = document.getElementById("area");
+        textarea.addEventListener("keypress",function(){
+            // document.getElementById("p-span").innerText = textarea.value;
+            var parg = document.getElementById("p-span");
+            parg.innerText =textarea.value;
+        })
+    </script>
+    
+    <h2>The Focus Event</h2>
+    <textarea name="" id="area1">Type your message Focus Event</textarea>    
+  </body>
+  <script type="text/javascript">
+    var area1 = document.getElementById("area1");
+    area1.addEventListener("focus",function(){
+        area1.style.background = "yellow";
+    })
+  </script>
+
+  <h2>Blur Event</h2>
+  <textarea name="" id="area2">Type your message here</textarea>
+  <p> Click the textarea and then click the outside of textarea</p>
+    <script type="text/javascript">
+        var area2 = document.getElementById("area2");
+        area2.addEventListener("focus",function(){
+            area2.style.background  = "blue";
+        })
+
+        area2.addEventListener("blur",function(){
+            area2.style.background = "white";
+        })
+    </script>
+
+    <h2>Resize Event</h2>
+    <p>Window Width: <span id="window-width"></span></p>
+    <p>Window Height: <span id="window-height"></span></p>
+    <script type="text/javascript">
+        window.addEventListener("resize",function(){
+            document.getElementById("window-width").innerText = window.innerWidth;
+            document.getElementById("window-height").innerText = window.innerHeight;
+        })
+    </script>
+
+    <h2>javascript Math Object ()</h2>
+    <!-- built in javascript object -->
+    <h2>The Ceil() Method</h2>
+    <script type="text/javascript">
+        document.write("Ceil of (0.15) is: " + Math.ceil(0.15));
+        lineBreak();
+        document.write("Ceil of (0.78) is: " + Math.ceil(0.78));
+        lineBreak();
+        document.write("Ceil of (0.90) is: " + Math.ceil(0.90));
+        lineBreak();
+    </script>
+
+    <h2>The Floor() Method</h2>
+    <script type="text/javascript">
+        document.write("floor of (1.15) is: " + Math.floor(1.15));
+        lineBreak();
+        document.write("floor of (2.78) is: " + Math.floor(2.78));
+        lineBreak();
+        document.write("floor of (3.90) is: " + Math.floor(3.90));
+        lineBreak();
+    </script>
+
+    <h2>The round() Method</h2>
+    <script type="text/javascript">
+        document.write("round of (1.15) is: " + Math.round(1.15));
+        lineBreak();
+        document.write("round of (2.78) is: " + Math.round(2.78));
+        lineBreak();
+        document.write("round of (3.90) is: " + Math.round(3.90));
+        lineBreak();
+    </script>
+
+    <h2>The sqrt() Method</h2>
+    <script type="text/javascript">
+        document.write("sqrt of (9) is: " + Math.sqrt(9));
+        lineBreak();
+        document.write("sqrt of (100) is: " + Math.sqrt(100));
+        lineBreak();
+        document.write("sqrt of (-9) is: " + Math.sqrt(-9));
+        lineBreak();
+    </script>
+
+    <h2>Math of Power</h2>
+    <script type="text/javascript">
+        document.write("power of (4,4) is :" + Math.pow(4,4));
+        lineBreak();
+        document.write("power of (2,3) is :" + Math.pow(2,3));
+        lineBreak();
+        document.write("power of (2,5) is :" + Math.pow(2,5));
+        lineBreak();
+    </script>
+
+    <h2>Math of random</h2>
+    <script type="text/javascript">
+        document.write("Random number is :" + Math.random());
+        lineBreak();
+        document.write("Random number is :" + Math.random());
+        lineBreak();
+        document.write("Random number is :" + Math.random());
+        lineBreak();
+    </script>
+
+    <h2>javascript if..else Statement</h2>
+    <button onclick="checkAge()">Click Me</button>
+    <script>
+        let age = 61;
+        if(age >=10 && age<=18){
+            document.write("This is teenager Boy");
+        }else if(age>=18 && age<=35){
+            document.write("This is Younger Men");
+        }else if(age >=35 && age<=60){
+            document.write("This is Old Men");
+        }else{
+            document.write("This is a die Men")
+        }
+        lineBreak();
+        function checkAge(){
+            let userAge = 19;
+            if(userAge >= 18){
+                // alert("This is old enough to enter");
+            }else{
+                // alert("This is old not enough to enter");
+            }
+        }
+        let fruits = "banana";
+        switch(fruits){
+            case "banana":
+                document.write("The banana color is yellow");
+                break;
+            case "apple" :
+                document.write("The apple color is red");
+                break;
+
+            case "mango" :
+                document.write("The mango color is green");
+                break;
+
+            default:
+                document.write("The fruits is not fruit");
+             }
+    </script>
+</html>
+ 
